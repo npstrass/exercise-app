@@ -36,6 +36,10 @@ body {
   gap: 3rem;
 }
 
+.sidebar--menuItem:active {
+    color: white;
+}
+
 .logo {
   position: relative;
   height: 1.5rem;
