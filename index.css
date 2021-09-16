@@ -1,0 +1,473 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.grid {
+  display: grid;
+  width: 100%;
+  height: 100vh;
+  margin: 0 auto;
+  grid-template-columns: .5fr 3.5fr 1fr;
+}
+
+@media (max-width: 1050px) {
+  .grid {
+    grid-template-columns: 80px auto 20%;
+  }
+}
+
+img {
+  width: 100%;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  color: rgb(150, 150, 150);
+  background: black;
+  padding: 3rem 0;
+}
+
+.sidebar--top,
+.sidebar--bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+}
+
+.logo {
+  position: relative;
+  height: 1.5rem;
+  width: 1.5rem;
+  background: hotpink;
+  border-radius: 50%;
+  transform: rotate(45deg);
+  margin-bottom: 4rem;
+}
+
+.logo::after {
+  content: "";
+  position: absolute;
+  top: -0.15rem;
+  right: -0.15rem;
+  height: 0.75rem;
+  width: 0.75rem;
+  background: white;
+}
+
+.mainContent {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.mainContent--top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.top--right {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.marginRight {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.mainContent--dailyWorkout {
+  display: flex;
+  flex-direction: column;
+}
+
+.dailyWorkout--heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.dailyWorkout--content {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 2rem;
+}
+
+.content--card {
+  box-sizing: border-box;
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+.content--card:nth-of-type(1) {
+  background: url(https://cdn.pixabay.com/photo/2015/11/19/11/39/sports-1050966__480.png),
+    #c4ffbb;
+  background-size: contain, cover;
+  background-position: right 0, center;
+  background-repeat: no-repeat;
+  background-blend-mode: normal;
+}
+
+.content--card:nth-of-type(2) {
+  border: 2px solid black;
+}
+
+.content--card:nth-of-type(3) {
+  border: 2px solid black;
+}
+
+.card--title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.card--details {
+  font-size: 0.85rem;
+  color: rgb(150, 150, 150);
+  margin-bottom: 1rem;
+}
+
+.card--btn {
+  display: inline-block;
+  padding: 0.5rem 1.75rem;
+  border-radius: 6px;
+  color: white;
+  background: black;
+}
+
+.mainContent--progress {
+  display: flex;
+  flex-direction: column;
+}
+
+.progress--heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.progress--content {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+}
+
+.content--item {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 18px;
+}
+
+@media (max-width: 1050px) {
+  .progress--content,
+  .dailyWorkout--content {
+    grid-template-columns: 1fr;
+  }
+}
+
+.content--item:nth-of-type(3) {
+  background: black;
+  color: white;
+}
+
+.item--icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 3rem;
+  width: 3rem;
+  border-radius: 8px;
+}
+
+.item--icon:nth-of-type(1) {
+  background: #faf9e3;
+}
+
+.item--icon:nth-of-type(2) {
+  background: #ecf4fa;
+}
+
+.item--icon:nth-of-type(3) {
+  background: white;
+}
+
+.icon--water {
+  color: black;
+}
+
+.item--text {
+  margin-left: -3rem;
+}
+
+@media (max-width: 1050px) {
+  .item--text {
+    margin: 0;
+  }
+}
+
+.text--large {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.text--small {
+  font-size: 0.85rem;
+  color: rgb(150, 150, 150);
+}
+
+.mainContent-activity {
+  display: flex;
+  flex-direction: column;
+}
+
+.activity--heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.activity--graph {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 4rem;
+  background: rgba(250, 250, 240, 0.5);
+  border-radius: 12px;
+  box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+}
+
+.graph--key {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.key--items {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+}
+
+.key--items p {
+  position: relative;
+}
+
+.key--items p::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -0.25rem;
+  transform: translate(100%, -50%);
+  height: 0.35rem;
+  width: 1.25rem;
+  border-radius: 50px;
+}
+
+.key--items p:nth-of-type(1)::after {
+  background: rgb(220, 220, 200);
+}
+
+.key--items p:nth-of-type(2)::after {
+  background: rgb(0, 200, 255);
+}
+
+.key--items p:nth-of-type(3)::after {
+  background: rgb(0, 0, 0);
+}
+
+.graph--content {
+  display: grid;
+  grid-template-columns: repeat(18, 1fr);
+  gap: 1rem;
+}
+
+@media (max-width: 900px) {
+    .mainContent--activity {
+        display: none;
+    }
+}
+
+.graph--content--item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.25rem;
+  font-size: 0.85rem;
+  color: rgb(150, 150, 150);
+}
+
+.item--stretch,
+.item--cardio,
+.item--crossFit {
+  width: 0.5rem;
+  border-radius: 50px;
+}
+
+.item--cardio {
+  background: rgb(0, 200, 255);
+}
+
+.item--crossFit {
+  background: rgb(0, 0, 0);
+}
+
+.item--stretch {
+  background: rgb(220, 220, 200);
+}
+
+.profileContent {
+  display: flex;
+  flex-direction: column;
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.bell {
+  position: relative;
+  text-align: right;
+  margin-bottom: 2rem;
+}
+
+.bell::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  right: -0.25rem;
+  height: 0.5rem;
+  width: 0.5rem;
+  border-radius: 50%;
+  background: hotpink;
+}
+
+.profileImg {
+  height: 4rem;
+  width: 4rem;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 0 auto 2rem;
+}
+
+.welcome {
+  font-size: 0.85rem;
+  color: rgb(150, 150, 150);
+}
+
+.userName {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 4rem;
+}
+
+.profileContent--card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 18px;
+  margin-bottom: 1rem;
+  text-align: left;
+  font-weight: bold;
+  font-size: 0.85rem;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  width: 66%;
+  gap: 1rem;
+}
+
+.card--icon {
+  position: relative;
+}
+
+.card--icon::after {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  right: 0;
+  transform: translate(85%, 25%);
+  z-index: -1;
+  height: 0.75rem;
+  width: 3rem;
+  border-radius: 50px;
+}
+
+.icon--workout::after {
+  background: rgba(120, 60, 255, 0.25);
+}
+
+.icon--calories::after {
+  background: rgba(255, 100, 120, 0.25);
+}
+
+.profileContent--goal {
+  display: flex;
+  flex-direction: column;
+}
+
+.profileContent--goal h3 {
+  text-align: left;
+  margin: 2rem 0 1rem;
+}
+
+.goal--details {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid;
+  border-radius: 12px;
+  padding: 1rem;
+  font-size: 0.85rem;
+}
+
+.details--top,
+.details--description {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.details--image {
+  position: relative;
+  overflow: hidden;
+  padding-top: 100%;
+  width: 100%;
+}
+
+.image--item {
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, 0);
+  padding-top: 100%;
+  width: 100%;
+  background: url(https://img.freepik.com/free-photo/silver-wavy-silk-background-texture_70287-1060.jpg?size=626&ext=jpg),
+    linear-gradient(to bottom right, black 50%, rgb(255, 255, 125) 50%);
+  border-radius: 50%;
+  background-blend-mode: darken;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
