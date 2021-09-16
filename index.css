@@ -15,17 +15,7 @@ body {
   width: 100%;
   height: 100vh;
   margin: 0 auto;
-  grid-template-columns: .5fr 3.5fr 1fr;
-}
-
-@media (max-width: 1050px) {
-  .grid {
-    grid-template-columns: 80px auto 20%;
-  }
-}
-
-img {
-  width: 100%;
+  grid-template-columns: 0.5fr 3.5fr 1fr;
 }
 
 .sidebar {
@@ -177,13 +167,6 @@ img {
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 18px;
 }
 
-@media (max-width: 1050px) {
-  .progress--content,
-  .dailyWorkout--content {
-    grid-template-columns: 1fr;
-  }
-}
-
 .content--item:nth-of-type(3) {
   background: black;
   color: white;
@@ -216,12 +199,6 @@ img {
 
 .item--text {
   margin-left: -3rem;
-}
-
-@media (max-width: 1050px) {
-  .item--text {
-    margin: 0;
-  }
 }
 
 .text--large {
@@ -298,13 +275,7 @@ img {
 .graph--content {
   display: grid;
   grid-template-columns: repeat(18, 1fr);
-  gap: 1rem;
-}
-
-@media (max-width: 900px) {
-    .mainContent--activity {
-        display: none;
-    }
+  gap: 1%;
 }
 
 .graph--content--item {
@@ -455,6 +426,9 @@ img {
   overflow: hidden;
   padding-top: 100%;
   width: 100%;
+  margin-top: -35%;
+  margin-bottom: 1rem;
+  border-bottom: 6px black solid;
 }
 
 .image--item {
@@ -470,4 +444,79 @@ img {
   background-blend-mode: darken;
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+@media (max-width: 1050px) {
+  .progress--content,
+  .dailyWorkout--content {
+    grid-template-columns: 1fr;
+  }
+
+  .item--text {
+    margin: 0;
+  }
+
+  .grid {
+    grid-template-columns: 80px auto 20%;
+  }
+
+  .mainContent--top,
+  .top--right {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+  }
+
+  .profileContent--card,
+  .left,
+  .details--top,
+  .details--description {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .graph--key,
+  .key--items {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+}
+
+@media (max-width: 750px) {
+  .grid {
+    grid-template-columns: 0.5fr 3.5fr;
+    grid-template-rows: 1fr 1fr;
+  }
+
+  .sidebar {
+    grid-row: span 2;
+  }
+
+  .profileContent--card,
+  .left,
+  .details--top,
+  .details--description {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .profileContent--card {
+    padding: 3rem 1rem;
+    font-size: 1.25rem;
+  }
+
+  .graph--content {
+    grid-template-columns: repeat(10, 1fr);
+  }
+
+  .disnone {
+    display: none;
+  }
+
+  .bell {
+    position: absolute;
+    top: 3rem;
+    right: 2rem;
+  }
 }
